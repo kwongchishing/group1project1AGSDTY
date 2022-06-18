@@ -41,7 +41,8 @@ using UnityEngine;using UnityEngine.SceneManagement;using UnityEngine.UI;public 
             PlayerPrefs.SetFloat("findgirlMaccept", save2.findgirlMaccept);
             PlayerPrefs.SetFloat("findgirlMfinish", save2.findgirlMfinish);
             PlayerPrefs.SetFloat("mainmission1finish",save2.mainmission1finish);
-            activeScene=SceneManager.GetActiveScene().buildIndex;
+            PlayerPrefs.SetFloat("petStart", save2.petStart);
+            activeScene =SceneManager.GetActiveScene().buildIndex;
             PlayerPrefs.SetInt("ActiveScene", activeScene);
             saved.SetActive(true);
             chickenmorningsound.Play();

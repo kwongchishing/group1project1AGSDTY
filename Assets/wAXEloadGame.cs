@@ -2,12 +2,11 @@ using UnityEngine;using UnityEngine.UI;public class wAXEloadGame:MonoBehaviour{
     public wAXE_health hp;
     public WAXE_exp exp;
     public Text mainmissionnow,Pname;
-    public GameObject chan,Real_houes4,potionHouse2, House1,House2,House3,fakedefenseMissionhouse,swordinwaitsisterhand, swordinp2hand, sisterweaponNPC, talkgetweaponCanvas, housesmokeFX, townwall, townwall2,All_newgame2notes,new2gamecollider,newgame2startPanel,myhousefake,Amission1house,mainmission1house1,bmainmission1house1,Ostoneminiicon,Pstoneminiicon,secretpathminiicon,missionbook,All_BULL_Enemy,All_BULL_Enemy2,icon2,playerInfoPanel,Lanters,newmainmission1,sisterwaitforjoin,Bushes,VillageFence,VillageFence2, OtherProps,OtherProps2,tree,tree2,undergroundFinalboss,undergroundFinalboss2,real_Pstonehouse,real_Ostonehouse,StonePuzzleCanvas,LetterOSTONE,GetOStone,undergroud,bgm1Collider,bgm3Collider,All_guard,finishgameCanvas,Allshieldman,newbgm1,Allnotes,mmpointer,Pstonehousearrow,buttoncollider,electricUI,talkwithsistercollider,well2Stone,well3Stone,well4Stone,mission3house,mission3housefinished,Pstoneminimapicon,trap1,trap2,trap3,trap4,Btrap1,Btrap2,saw1,saw2,saw3,saw4,saw5,saw6,saw7,axe1,axe2,axe3,hammer1,hammer2,All_powerfulGuard,PstonePlace,Pstonefinish,Pstone,groupbarrel,Ostoneminimapicon,All_turtle,whereOstone,NotbombBarrel,OstonePlace,Ostonefinish,bg4,AlloldmanEnemy,Ostone,GoodBadCountBar,SDBDfile,minimapiconKey,mainmissiontext,oldplayer,player,startmission,howtoplay,Playername,healthbar,expbar,starttext,axeUI,potionCount,punchUI,firstangrylog,potion1,potion2,potion3,icon,sportFunction,MathFunction,saveNPC1,saveNPC2,moneybag,cage,notes8,angry2,angry3,angry5,humanenemy,oldmusic,brokenaxechecker1,humanenemy2,GateKey,gateL,gateR,gateCollider,boss1,unrealboss1,runningGame,saveNPCforkillboss1,brokenaxechecker2,minimapiconmchouse,minimapiconGate;
+    public GameObject fakepethouse,realpethouse,talkcanvaspet,petleavecanvas,NPCpet,fakepet,realpet,chan,Real_houes4,potionHouse2,House1,House2,House3,fakedefenseMissionhouse,swordinwaitsisterhand,swordinp2hand,sisterweaponNPC,talkgetweaponCanvas,housesmokeFX,townwall,townwall2,All_newgame2notes,new2gamecollider,newgame2startPanel,myhousefake,Amission1house,mainmission1house1,bmainmission1house1,Ostoneminiicon,Pstoneminiicon,secretpathminiicon,missionbook,All_BULL_Enemy,All_BULL_Enemy2,icon2,playerInfoPanel,Lanters,newmainmission1,sisterwaitforjoin,Bushes,VillageFence,VillageFence2, OtherProps,OtherProps2,tree,tree2,undergroundFinalboss,undergroundFinalboss2,real_Pstonehouse,real_Ostonehouse,StonePuzzleCanvas,LetterOSTONE,GetOStone,undergroud,bgm1Collider,bgm3Collider,All_guard,finishgameCanvas,Allshieldman,newbgm1,Allnotes,mmpointer,Pstonehousearrow,buttoncollider,electricUI,talkwithsistercollider,well2Stone,well3Stone,well4Stone,mission3house,mission3housefinished,Pstoneminimapicon,trap1,trap2,trap3,trap4,Btrap1,Btrap2,saw1,saw2,saw3,saw4,saw5,saw6,saw7,axe1,axe2,axe3,hammer1,hammer2,All_powerfulGuard,PstonePlace,Pstonefinish,Pstone,groupbarrel,Ostoneminimapicon,All_turtle,whereOstone,NotbombBarrel,OstonePlace,Ostonefinish,bg4,AlloldmanEnemy,Ostone,GoodBadCountBar,SDBDfile,minimapiconKey,mainmissiontext,oldplayer,player,startmission,howtoplay,Playername,healthbar,expbar,starttext,axeUI,potionCount,punchUI,firstangrylog,potion1,potion2,potion3,icon,sportFunction,MathFunction,saveNPC1,saveNPC2,moneybag,cage,notes8,angry2,angry3,angry5,humanenemy,oldmusic,brokenaxechecker1,humanenemy2,GateKey,gateL,gateR,gateCollider,boss1,unrealboss1,runningGame,saveNPCforkillboss1,brokenaxechecker2,minimapiconmchouse,minimapiconGate;
 public AudioSource main2music;public Texture2D cursorArrow;public Ischange changeornot;public save2 save;
     void Start(){
-        if(PlayerPrefs.HasKey("Volume"))
-        {
-            AudioListener.volume = PlayerPrefs.GetFloat("Volume");
+        if(PlayerPrefs.HasKey("Volume")){
+            AudioListener.volume=PlayerPrefs.GetFloat("Volume");
         }
             changeornot.ischange=PlayerPrefs.GetFloat("ischange"); 
         save.w_AXE=PlayerPrefs.GetFloat("w_AXE");
@@ -236,7 +235,7 @@ public AudioSource main2music;public Texture2D cursorArrow;public Ischange chang
             hp.currentHealth=PlayerPrefs.GetFloat("hp");
             if(save.newgamesaved<1){
                  player.transform.position=new Vector3(417.292511f,30.2289944f,291.310608f);
-                newgame2startPanel.SetActive(true);hp.currentHealth = 100;
+                newgame2startPanel.SetActive(true);hp.currentHealth=100;
             }
             hp.playerDefense=PlayerPrefs.GetFloat("defense");
             exp.playerAttack=PlayerPrefs.GetFloat("attack");
@@ -257,6 +256,7 @@ public AudioSource main2music;public Texture2D cursorArrow;public Ischange chang
             save.point7finish = PlayerPrefs.GetInt("point7finish");
             saveNPC2.SetActive(false);player.SetActive(true);
             //display and destroy at start
+            realpethouse.SetActive(true);
             Real_houes4.SetActive(true);
             potionHouse2.SetActive(true);
             House1.SetActive(true);
@@ -349,6 +349,7 @@ public AudioSource main2music;public Texture2D cursorArrow;public Ischange chang
             Amission1house.GetComponent<SphereCollider>().enabled=true;
             myhousefake.GetComponent<SphereCollider>().enabled=true;
             fakedefenseMissionhouse.GetComponent<SphereCollider>().enabled=true;
+            fakepethouse.GetComponent<SphereCollider>().enabled=true;
             new2gamecollider.SetActive(true);
             save.bull_kingisdead=PlayerPrefs.GetFloat("bull_kingisdead");
             save.bull_kingisdead1=PlayerPrefs.GetFloat("bull_kingisdead1");
@@ -367,6 +368,14 @@ public AudioSource main2music;public Texture2D cursorArrow;public Ischange chang
             save.mainmission1finish=PlayerPrefs.GetFloat("mainmission1finish");
             save.findgirlMaccept=PlayerPrefs.GetFloat("findgirlMaccept");
             save.findgirlMfinish=PlayerPrefs.GetFloat("findgirlMfinish");
+            save.petStart=PlayerPrefs.GetFloat("petStart");
+            if(save.petStart>0){
+                Destroy(fakepet);
+                realpet.SetActive(true);
+                NPCpet.GetComponent<SphereCollider>().enabled=false;
+                petleavecanvas.SetActive(true);
+                Destroy(talkcanvaspet);
+            }
             if(save.newgamesaved==1){
                 player.transform.position=new Vector3(978.670227f,-117.409554f,-113.36776f);
                 save.isinshop=true;
