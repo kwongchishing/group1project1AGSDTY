@@ -219,7 +219,7 @@ namespace BitGamey
 			Ydistance = Mathf.Abs(Player1.transform.position.y - Player2.transform.position.y);
 			if (Ydistance >= 0f && Ydistance <= 0.4f && save2.isinshop == false)
 			{
-				camYPos_offset = 0.7f;
+				camYPos_offset = 0.9f;
 				SplitscreenCamera.GetComponent<Camera>().nearClipPlane = 1.8f;
 				splitscreenDist = 5.8f;
 			}
