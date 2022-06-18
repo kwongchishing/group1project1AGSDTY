@@ -1,0 +1,1 @@
+using UnityEngine;using UnityEngine.UI;public class currentmoneyUpdate:MonoBehaviour{public Text thiscurrentmoney;public save2 save2;void Update(){thiscurrentmoney.text=save2.currentMoney.ToString();}}

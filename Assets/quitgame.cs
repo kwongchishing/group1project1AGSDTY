@@ -1,0 +1,1 @@
+using UnityEngine;public class quitgame:MonoBehaviour{public void Quitgame(){Application.Quit();}}

@@ -1,0 +1,1 @@
+using UnityEngine;using UnityEngine.UI;public class newEXPbar:MonoBehaviour{public WAXE_exp playerExp;public Image fillImage;Slider slider;void Start(){slider=GetComponent<Slider>();}void Update(){float fillValue=playerExp.currentExp/playerExp.maxExp;slider.value=fillValue;}}

@@ -1,0 +1,1 @@
+using UnityEngine;using UnityEngine.UI;public class expBar:MonoBehaviour{public Exp playerExp;public Image fillImage;Slider slider;void Start(){slider=GetComponent<Slider>();}void Update(){float fillValue=playerExp.currentExp/playerExp.maxExp;slider.value=fillValue;}}

@@ -1,0 +1,1 @@
+using UnityEngine;public class runtext2destry:MonoBehaviour{void Start(){Destroy(this.gameObject,5f);}}

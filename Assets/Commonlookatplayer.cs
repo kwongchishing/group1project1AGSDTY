@@ -1,0 +1,2 @@
+using UnityEngine;public class Commonlookatplayer:MonoBehaviour{
+    public Transform Player;void Update(){this.gameObject.transform.LookAt(new Vector3(Player.transform.position.x,transform.position.y,Player.transform.position.z));}}

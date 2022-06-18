@@ -1,0 +1,1 @@
+using UnityEngine;public class nextText:MonoBehaviour{public GameObject nexttext;void Update(){if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E)) {nexttext.SetActive(true);this.gameObject.SetActive(false);}}}

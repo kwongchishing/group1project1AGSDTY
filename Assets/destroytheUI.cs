@@ -1,0 +1,1 @@
+using UnityEngine;public class destroytheUI:MonoBehaviour{void Start(){Destroy(this.gameObject,5);}}
