@@ -42,6 +42,7 @@ using UnityEngine;using UnityEngine.SceneManagement;using UnityEngine.UI;public 
             PlayerPrefs.SetFloat("findgirlMfinish", save2.findgirlMfinish);
             PlayerPrefs.SetFloat("mainmission1finish",save2.mainmission1finish);
             PlayerPrefs.SetFloat("petStart", save2.petStart);
+            PlayerPrefs.SetFloat("shitcount", save2.shitcount);
             activeScene =SceneManager.GetActiveScene().buildIndex;
             PlayerPrefs.SetInt("ActiveScene", activeScene);
             saved.SetActive(true);

@@ -6,7 +6,7 @@ using UnityEngine;using UnityEngine.UI;using UnityEngine.SceneManagement;public 
     public Text Pname;
     public GameObject player;
     public Ischange changeornot;
-    public float petStart,findgirlMfinish,findgirlMaccept,defenseMfail,defenseMfinish,defenseMaccept,bull_kingisdead3,bull_kingisdead2,bull_kingisdead1,bull_kingisdead,mainmission1finish,sisterweapon,newgamesaved;   //newgame2
+    public float shitcount,petStart,findgirlMfinish,findgirlMaccept,defenseMfail,defenseMfinish,defenseMaccept,bull_kingisdead3,bull_kingisdead2,bull_kingisdead1,bull_kingisdead,mainmission1finish,sisterweapon,newgamesaved;   //newgame2
     public float finishgame,gateopened,finishsentence,cageIsdestroy,collectedkey,currentpotion,goodbadcount,letterOstone,letterPstone,finishOstone,finishBombgame, finishPstone,trapisstep,mission3finish,clearwell2,clearwell3,clearwell4,talkedwithsister;
     public SaveDataBeforeDestroy SDBD;
     public int currentMoney,totalSkillPoint,point1finish,point2finish,point3finish,point4finish,point5finish,point6finish,point7finish;
@@ -20,7 +20,7 @@ using UnityEngine;using UnityEngine.UI;using UnityEngine.SceneManagement;public 
         w_AXE=1;
     }
     void Update(){
-        if(Input.GetKeyDown(KeyCode.Return)|| Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.Return)||Input.GetKeyDown(KeyCode.E))
         {  //press enter save        
             //savehp
             PlayerPrefs.SetFloat("hp",hp.currentHealth);

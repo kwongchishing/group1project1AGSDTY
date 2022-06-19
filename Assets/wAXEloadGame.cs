@@ -369,7 +369,8 @@ public AudioSource main2music;public Texture2D cursorArrow;public Ischange chang
             save.findgirlMaccept=PlayerPrefs.GetFloat("findgirlMaccept");
             save.findgirlMfinish=PlayerPrefs.GetFloat("findgirlMfinish");
             save.petStart=PlayerPrefs.GetFloat("petStart");
-            if(save.petStart>0){
+            save.shitcount=PlayerPrefs.GetFloat("shitcount");
+            if (save.petStart>0){
                 Destroy(fakepet);
                 realpet.SetActive(true);
                 NPCpet.GetComponent<SphereCollider>().enabled=false;
