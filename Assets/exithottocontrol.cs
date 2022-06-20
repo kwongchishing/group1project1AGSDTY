@@ -3,7 +3,8 @@ using UnityEngine;public class exithottocontrol:MonoBehaviour{
     public save2 save2;
     public GameObject p2leave,continueBTN, loadgameBTN,backtotitleBTN,howtoplayBTN,volumesetBTN;
     void Update(){
-        if(Input.GetKeyDown(KeyCode.Backspace)){
+        if(Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.Q))
+        {
             cancel.Play();
             this.gameObject.SetActive(false);
             continueBTN.SetActive(true);
