@@ -2,7 +2,7 @@ using UnityEngine;using UnityEngine.SceneManagement;public class settingfunction
     public AudioSource readsound,cancelSound;
     public save2 save2;
     public Transform Camera,emptyobject,sisterwait,sisteruse;
-    public GameObject p2leaveBTN,footstepRoad,Player,mecamera,splitscreencamera,sisterwaitforjoin,sistercontroll,howtoplayBTN,howtoplaynotes,continueBTN,backtomenuBTN,volumesetBTN,loadgameBTN,panel,settingicon,nosave,slider;
+    public GameObject volumesaveBTN, volumebackBTN,p2leaveBTN, footstepRoad,Player,mecamera,splitscreencamera,sisterwaitforjoin,sistercontroll,howtoplayBTN,howtoplaynotes,continueBTN,backtomenuBTN,volumesetBTN,loadgameBTN,panel,settingicon,nosave,slider;
     public void closesetting(){
         panel.SetActive(false);
         settingicon.SetActive(true);
@@ -16,6 +16,8 @@ using UnityEngine;using UnityEngine.SceneManagement;public class settingfunction
     public void volume(){
         continueBTN.SetActive(false); cancelSound.Play();
         backtomenuBTN.SetActive(false);
+        volumesaveBTN.SetActive(true);
+        volumebackBTN.SetActive(true);
         loadgameBTN.SetActive(false);
         howtoplayBTN.SetActive(false);
         slider.SetActive(true);
@@ -27,6 +29,8 @@ using UnityEngine;using UnityEngine.SceneManagement;public class settingfunction
         volumesetBTN.SetActive(true);
         backtomenuBTN.SetActive(true);
         loadgameBTN.SetActive(true);
+        volumesaveBTN.SetActive(false);
+        volumebackBTN.SetActive(false);
         howtoplayBTN.SetActive(true);
         slider.SetActive(false); cancelSound.Play();
         if(save2.isjoined==true){p2leaveBTN.SetActive(true);}

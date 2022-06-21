@@ -2,8 +2,8 @@ using UnityEngine;using UnityEngine.UI;public class volumeSlider:MonoBehaviour{p
     public void changeVolume(){
         AudioListener.volume=slider.value;}
     public void backnotsaveVolume(){
-        if(PlayerPrefs.HasKey("Volume")){slider.value=PlayerPrefs.GetFloat("Volume");}
-        else{slider.value=1;}}
+        if(PlayerPrefs.HasKey("Volume")){slider.value=PlayerPrefs.GetFloat("Volume"); AudioListener.volume=slider.value; }
+        else{slider.value=1; AudioListener.volume = slider.value; }
+    }
     public void saveVolume(){
-        AudioListener.volume=slider.value;
-        PlayerPrefs.SetFloat("Volume",slider.value);}}
+        PlayerPrefs.SetFloat("Volume",AudioListener.volume);}}
