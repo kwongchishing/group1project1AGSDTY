@@ -5,8 +5,7 @@ using UnityEngine;using UnityEngine.UI;public class loadVolume:MonoBehaviour{
             slider.value=PlayerPrefs.GetFloat("Volume");
         }
         else{
-            slider.value=AudioListener.volume;
+            slider.value=1;
         }
-      //  PlayerPrefs.SetFloat("Volume",slider.value);
     }
 }
