@@ -3,7 +3,7 @@ using UnityEngine;public class petstartfunction:MonoBehaviour{
     public GameObject NPC,leavecanvas,door,talkcanvaspet,fakepet,realpet;
     void Update(){
         if(Input.GetKeyDown(KeyCode.Return)||Input.GetKeyDown(KeyCode.E)){
-            save2.petStart++;
+            save2.petStart=1;
             Destroy(fakepet);
             realpet.SetActive(true);
             NPC.GetComponent<SphereCollider>().enabled=false;

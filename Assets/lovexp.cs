@@ -3,7 +3,7 @@ using UnityEngine;public class lovexp:MonoBehaviour{
     public Transform Player1,Player2;
     public AudioSource feed;
     public save2 save2;
-    public GameObject feedtext,feedtextsister,feedFX;
+    public GameObject realpet2,feedtext, feedtextsister,feedFX;
     void Start(){
         maxLove=200f;
         currentLove=0f;
@@ -30,6 +30,11 @@ using UnityEngine;public class lovexp:MonoBehaviour{
             feedFX.GetComponent<ParticleSystem>().Play();
             currentLove +=20f;
             save2.currentpotion--;
+        }
+        if(currentLove>=200){
+            save2.petStart=2;
+            realpet2.SetActive(true);
+            Destroy(this.gameObject);
         }
     }
 }
