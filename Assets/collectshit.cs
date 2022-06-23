@@ -1,7 +1,7 @@
 using UnityEngine;public class collectshit:MonoBehaviour{
     public GameObject shit;
     public save2 save2;
-    public petlove petlove;
+    public petlove4 petlove;
     public AudioSource getitem;
     void Update(){
         if(Input.GetKeyDown(KeyCode.Return)||Input.GetKeyDown(KeyCode.E)){

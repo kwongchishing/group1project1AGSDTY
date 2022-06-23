@@ -402,7 +402,7 @@ public AudioSource main2music;public Texture2D cursorArrow;public Ischange chang
                 Destroy(fakepet);
                 realpet.SetActive(false);
                 realpet2.SetActive(false);
-                realpet3.SetActive(true);
+                realpet3.SetActive(false);
                 realpet4.SetActive(true);
                 NPCpet.GetComponent<SphereCollider>().enabled=false;
                 Destroy(talkcanvaspet);
