@@ -57,6 +57,11 @@ if(save2.finishgame>0&&currentHealth<=0){
             anim.SetTrigger("hurt");
             bigfoxhitcount=0;
         }
+        if (bullhitcount >=1)
+        {
+            anim.SetTrigger("hurt");
+            bullhitcount = 0;
+        }
     }
     
     void OnTriggerEnter(Collider monster1){       
@@ -95,19 +100,11 @@ if(save2.finishgame>0&&currentHealth<=0){
         }
         if(monster1.gameObject.tag=="bull_weapon"){
             currentHealth=currentHealth-3f/playerDefense;
-            bullhitcount++;
-            if(bullhitcount>=4){
-                anim.SetTrigger("hurt");
-                bullhitcount=0;
-            }
+            bullhitcount+=0.2f;            
         }
         if(monster1.gameObject.tag=="bull_heavyweapon"){
             currentHealth=currentHealth-15f/playerDefense;
             bullhitcount++;
-            if(bullhitcount>=1){
-                anim.SetTrigger("hurt");
-                bullhitcount=0;
-            }
         }
         if(monster1.gameObject.tag=="guard_weapon"){
             currentHealth=currentHealth-1.2f/playerDefense;

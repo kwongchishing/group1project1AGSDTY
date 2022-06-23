@@ -1,4 +1,5 @@
 using UnityEngine;public class AXE_lighting:MonoBehaviour{
+    public camerashake camerashake;
     public AudioSource gethurt; public GameObject electricskill,AXE, combo3stormFX; public bool lighting,heavying;public AudioSource lightingSound,heavycombo2Sound,lightslashSound,heavyslashSound,heavyingSound,lightaxecombo2sound,lightaxecombo3sound,combo3StormFXsound;
     Animator anim;
     void Start(){
@@ -6,10 +7,10 @@ using UnityEngine;public class AXE_lighting:MonoBehaviour{
     }
     void Update(){
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("LightAttack")&&Input.GetButtonDown("Fire1")){
-            anim.SetTrigger("lightcombo2");
+            anim.SetTrigger("lightcombo2"); 
         }
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("lightcombo2")&&Input.GetButtonDown("Fire1")){
-            anim.SetTrigger("lightcombo3");
+            anim.SetTrigger("lightcombo3"); 
         }
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("HeavyAttack")&&Input.GetButtonDown("Fire2")){
             anim.SetTrigger("heavycombo2");
@@ -108,5 +109,16 @@ using UnityEngine;public class AXE_lighting:MonoBehaviour{
         AXE.SetActive(false);
         AXE.SetActive(true);
         anim.ResetTrigger("hurt");
+    }
+    public void shake(){
+        camerashake.shakeDuration=0.007f;
+    }
+    public void smallshake()
+    {
+        camerashake.shakeDuration = 0.003f;
+    }
+    public void verysmallshake()
+    {
+        camerashake.shakeDuration = 0.001f;
     }
 }

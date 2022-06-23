@@ -24,7 +24,7 @@ using UnityEngine;using UnityEngine.AI;public class Bull_EnemyHealth:MonoBehavio
             blood3FX.GetComponent<ParticleSystem>().Play();
             currentHealth=currentHealth-exp.playerAttack;
             hitbyPlayercount++;
-            gethit.Play(); weaponhit.Play();           
+            gethit.Play(); weaponhit.Play();
         }
         if(trig&&checklight.heavying){
             hitFX1spark.GetComponent<ParticleSystem>().Play();
@@ -55,7 +55,7 @@ using UnityEngine;using UnityEngine.AI;public class Bull_EnemyHealth:MonoBehavio
             chanblood3FX.GetComponent<ParticleSystem>().Play();
         }
         if (other.gameObject.tag=="combo3storm"){
-            currentHealth=currentHealth-exp.playerAttack*12f;
+            currentHealth=currentHealth-exp.playerAttack*12f; 
         }
         if(other.gameObject.tag=="electricskill"){
             currentHealth=currentHealth-exp.playerAttack*282f;
@@ -67,7 +67,7 @@ using UnityEngine;using UnityEngine.AI;public class Bull_EnemyHealth:MonoBehavio
             hitbyPlayercount++;
             punch.Play();
             sisterhitFX1.GetComponent<ParticleSystem>().Play();
-            sisterhitFX2.GetComponent<ParticleSystem>().Play();
+            sisterhitFX2.GetComponent<ParticleSystem>().Play(); 
         }
         if(other.gameObject.tag=="p2heavyattack"){
             currentHealth=currentHealth-exp.playerAttack*2.9f;
