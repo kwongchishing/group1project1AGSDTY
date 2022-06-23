@@ -9,10 +9,10 @@ using UnityEngine;public class sistertohouse2:MonoBehaviour{
         distance=Vector3.Distance(p1.transform.position,p2.transform.position);
         if(Input.GetKeyDown(KeyCode.KeypadEnter)){
             opendoorsound.Play();
-            Player2.transform.position=new Vector3(983.2887573242188f,-116.91465759277344f,-115.69998168945313f);
+            Player2.transform.position=new Vector3(983.2887573242188f,-116.9f,-115.69998168945313f);
             save2.isinshop=true;
             if(distance<=8f){
-                Player1.transform.position=new Vector3(981.454529f,-117.619949f,-114.80114f);
+                Player1.transform.position=new Vector3(981.454529f,-117.40955f,-114.80114f);
                 save2.isinshop=true;
             }
         }

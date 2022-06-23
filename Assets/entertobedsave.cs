@@ -4,6 +4,9 @@ using UnityEngine;using UnityEngine.SceneManagement;using UnityEngine.UI;public 
     public int activeScene;
     public wAXE_health hp;
     public WAXE_exp exp;
+    public lovexp lovexp;
+    public lovexp3 lovexp3;
+    public lovexp2 lovexp2;
     public Text Pname;
     public AudioSource chickenmorningsound;
     public void Update(){
@@ -43,6 +46,9 @@ using UnityEngine;using UnityEngine.SceneManagement;using UnityEngine.UI;public 
             PlayerPrefs.SetFloat("mainmission1finish",save2.mainmission1finish);
             PlayerPrefs.SetFloat("petStart", save2.petStart);
             PlayerPrefs.SetFloat("shitcount", save2.shitcount);
+            PlayerPrefs.SetFloat("currentLove",lovexp.currentLove);
+            PlayerPrefs.SetFloat("currentLove2",lovexp2.currentLove);
+            PlayerPrefs.SetFloat("currentLove3",lovexp3.currentLove);
             activeScene =SceneManager.GetActiveScene().buildIndex;
             PlayerPrefs.SetInt("ActiveScene", activeScene);
             saved.SetActive(true);

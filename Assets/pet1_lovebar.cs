@@ -4,7 +4,8 @@ using UnityEngine;using UnityEngine.UI;public class pet1_lovebar:MonoBehaviour{
     Slider slider;
     void Start(){
         lovexp.currentLove=0;
-        lovexp.maxLove=200; slider=GetComponent<Slider>();
+        lovexp.maxLove=200; slider=GetComponent<Slider>(); 
+        lovexp.currentLove=PlayerPrefs.GetFloat("currentLove");
     }
     void Update(){
         if(slider.value>slider.minValue&&!fillImage.enabled){
