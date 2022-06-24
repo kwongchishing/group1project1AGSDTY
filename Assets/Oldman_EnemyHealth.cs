@@ -23,8 +23,9 @@ using UnityEngine;public class Oldman_EnemyHealth:MonoBehaviour{
             blood2FX.GetComponent<ParticleSystem>().Play();
             blood3FX.GetComponent<ParticleSystem>().Play();
             currentHealth=currentHealth-exp.playerAttack;
-            gethit.Play(); weaponhit.Play();
-            if(hitbyPlayercount>12){anim.ResetTrigger("kickattack"); oldmanattack1Sound.Stop(); anim.SetTrigger("gethit"); hitbyPlayercount=0;}
+            gethit.Play(); weaponhit.Play(); Vector3 difference = (thisOldman.transform.position - player.transform.position) / 559;
+            thisOldman.transform.position = new Vector3(thisOldman.transform.position.x + difference.x, thisOldman.transform.position.y, thisOldman.transform.position.z + difference.z);
+            if (hitbyPlayercount>12){anim.ResetTrigger("kickattack"); oldmanattack1Sound.Stop(); anim.SetTrigger("gethit"); hitbyPlayercount=0;}
         }
         if(trig&&checklight.heavying){
             hitFX1spark.GetComponent<ParticleSystem>().Play();
@@ -34,8 +35,9 @@ using UnityEngine;public class Oldman_EnemyHealth:MonoBehaviour{
             blood3FX.GetComponent<ParticleSystem>().Play();
             currentHealth=currentHealth-exp.playerAttack*1.9f;
             gethit.Play(); weaponhit.Play();
-            hitbyPlayercount++;
-            if(hitbyPlayercount>12){anim.ResetTrigger("kickattack"); oldmanattack1Sound.Stop(); anim.SetTrigger("gethit"); hitbyPlayercount=0;}
+            hitbyPlayercount++; Vector3 difference = (thisOldman.transform.position - player.transform.position) / 559;
+            thisOldman.transform.position = new Vector3(thisOldman.transform.position.x + difference.x, thisOldman.transform.position.y, thisOldman.transform.position.z + difference.z);
+            if (hitbyPlayercount>12){anim.ResetTrigger("kickattack"); oldmanattack1Sound.Stop(); anim.SetTrigger("gethit"); hitbyPlayercount=0;}
         }
         if(currentHealth<=0){
             oldmanattack1Sound.Stop(); WeaponrightLeg.GetComponent<BoxCollider>().enabled=false;//AttackPlayerCol
@@ -49,7 +51,8 @@ using UnityEngine;public class Oldman_EnemyHealth:MonoBehaviour{
             trig=true;
         }
         if(other.gameObject.tag=="combo3storm"){
-            currentHealth=currentHealth-exp.playerAttack*12f;
+            currentHealth=currentHealth-exp.playerAttack*12f; Vector3 difference = (thisOldman.transform.position - player.transform.position) / 9;
+            thisOldman.transform.position = new Vector3(thisOldman.transform.position.x + difference.x, thisOldman.transform.position.y, thisOldman.transform.position.z + difference.z); anim.SetTrigger("gethit");
         }
         if(other.gameObject.tag=="electricskill"){
             currentHealth=currentHealth-exp.playerAttack*197f;

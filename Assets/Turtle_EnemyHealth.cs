@@ -23,8 +23,9 @@ using UnityEngine;using UnityEngine.AI;public class Turtle_EnemyHealth:MonoBehav
             blood2FX.GetComponent<ParticleSystem>().Play();
             blood3FX.GetComponent<ParticleSystem>().Play();
             currentHealth=currentHealth-exp.playerAttack;
-            gethit.Play();weaponhit.Play();
-            if(hitbyPlayercount>12){anim.SetTrigger("gethit");hitbyPlayercount=0;}
+            gethit.Play();weaponhit.Play(); Vector3 difference = (thisTurtle.transform.position - player.transform.position) / 500;
+            thisTurtle.transform.position = new Vector3(thisTurtle.transform.position.x + difference.x, thisTurtle.transform.position.y, thisTurtle.transform.position.z + difference.z);
+            if (hitbyPlayercount>12){anim.SetTrigger("gethit");hitbyPlayercount=0;}
         }
         if(trig&&checklight.heavying){
             hitFX1spark.GetComponent<ParticleSystem>().Play();
@@ -34,8 +35,9 @@ using UnityEngine;using UnityEngine.AI;public class Turtle_EnemyHealth:MonoBehav
             blood3FX.GetComponent<ParticleSystem>().Play();
             currentHealth=currentHealth-exp.playerAttack*1.9f;
             gethit.Play(); weaponhit.Play();
-            hitbyPlayercount++;
-            if(hitbyPlayercount>12){anim.SetTrigger("gethit");hitbyPlayercount=0;}
+            hitbyPlayercount++; Vector3 difference = (thisTurtle.transform.position - player.transform.position) / 500;
+            thisTurtle.transform.position = new Vector3(thisTurtle.transform.position.x + difference.x, thisTurtle.transform.position.y, thisTurtle.transform.position.z + difference.z);
+            if (hitbyPlayercount>12){anim.SetTrigger("gethit");hitbyPlayercount=0;}
         }
         if(currentHealth<=0){
             Weapon.GetComponent<BoxCollider>().enabled=false;//AttackPlayerCol
@@ -51,7 +53,8 @@ using UnityEngine;using UnityEngine.AI;public class Turtle_EnemyHealth:MonoBehav
             trig=true;
         }
         if(other.gameObject.tag=="combo3storm"){
-            currentHealth=currentHealth-exp.playerAttack*12f;
+            currentHealth=currentHealth-exp.playerAttack*12f; Vector3 difference = (thisTurtle.transform.position - player.transform.position) / 3;
+            thisTurtle.transform.position = new Vector3(thisTurtle.transform.position.x + difference.x, thisTurtle.transform.position.y, thisTurtle.transform.position.z + difference.z);
         }
         if(other.gameObject.tag=="electricskill"){
             currentHealth=currentHealth-exp.playerAttack*82f;

@@ -26,7 +26,8 @@ using UnityEngine;public class boyWithWeaponHealth:MonoBehaviour{
             blood2FX.GetComponent<ParticleSystem>().Play();
             blood3FX.GetComponent<ParticleSystem>().Play();
             currentHealth=currentHealth-exp.playerAttack;            
-            gethit.Play();weaponhit.Play(); hitbyplayercount++;
+            gethit.Play();weaponhit.Play(); hitbyplayercount++; Vector3 difference = (thisboy.transform.position - player.transform.position) / 500;
+            thisboy.transform.position = new Vector3(thisboy.transform.position.x + difference.x, thisboy.transform.position.y, thisboy.transform.position.z + difference.z);
         }
         if(trig&&checklight.heavying){
             hitFX1spark.GetComponent<ParticleSystem>().Play();
@@ -35,7 +36,8 @@ using UnityEngine;public class boyWithWeaponHealth:MonoBehaviour{
             blood2FX.GetComponent<ParticleSystem>().Play();
             blood3FX.GetComponent<ParticleSystem>().Play();
             currentHealth=currentHealth-exp.playerAttack*1.9f;
-            gethit.Play();weaponhit.Play(); hitbyplayercount++;
+            gethit.Play();weaponhit.Play(); hitbyplayercount++; Vector3 difference = (thisboy.transform.position - player.transform.position) / 500;
+            thisboy.transform.position = new Vector3(thisboy.transform.position.x + difference.x, thisboy.transform.position.y, thisboy.transform.position.z + difference.z);
         }
         if(currentHealth<=0){
             die.Play();
@@ -49,7 +51,8 @@ using UnityEngine;public class boyWithWeaponHealth:MonoBehaviour{
             trig=true;
         }
         if(other.gameObject.tag=="combo3storm"){
-            currentHealth=currentHealth-exp.playerAttack*12f; hitbyplayercount+=2;
+            currentHealth=currentHealth-exp.playerAttack*12f; hitbyplayercount+=2; Vector3 difference = (thisboy.transform.position - player.transform.position) / 2.2f;
+            thisboy.transform.position = new Vector3(thisboy.transform.position.x + difference.x, thisboy.transform.position.y, thisboy.transform.position.z + difference.z);
         }
         if(other.gameObject.tag=="electricskill"){
             currentHealth=currentHealth-exp.playerAttack*82f; hitbyplayercount+=3;

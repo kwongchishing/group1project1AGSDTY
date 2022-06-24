@@ -26,7 +26,7 @@ using UnityEngine;public class AngryLogInHouseHealth:MonoBehaviour{
             RFX1.GetComponent<ParticleSystem>().Play();
             RFX2.GetComponent<ParticleSystem>().Play();
             punch1.Play();            
-            Vector3 difference=AngryLog.transform.position-player.transform.position;
+            Vector3 difference=(AngryLog.transform.position-player.transform.position)/1.5f;
             AngryLog.transform.position=new Vector3(AngryLog.transform.position.x+difference.x,AngryLog.transform.position.y+difference.y,AngryLog.transform.position.z+difference.z);
             anim.SetTrigger("IsGetHit");
         }
@@ -35,7 +35,7 @@ using UnityEngine;public class AngryLogInHouseHealth:MonoBehaviour{
             LFX1.GetComponent<ParticleSystem>().Play();
             LFX2.GetComponent<ParticleSystem>().Play();
             punch2.Play();            
-            Vector3 difference=AngryLog.transform.position-player.transform.position;
+            Vector3 difference= (AngryLog.transform.position - player.transform.position) / 1.5f;
             AngryLog.transform.position=new Vector3(AngryLog.transform.position.x+difference.x,AngryLog.transform.position.y+difference.y,AngryLog.transform.position.z+difference.z);
             anim.SetTrigger("IsGetHit");
         }

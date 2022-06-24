@@ -238,7 +238,7 @@ if(save2.finishgame>0&&currentHealth<=0){
             finalbosshitcount+=0.3f*Time.deltaTime;
         }
         if(monster1.gameObject.tag=="finalbosswater"){
-            currentHealth=currentHealth-1f/playerDefense*Time.deltaTime;
+            currentHealth=currentHealth-9f/playerDefense*Time.deltaTime;
             finalbosshitcount+=0.3f*Time.deltaTime;
         }
     }

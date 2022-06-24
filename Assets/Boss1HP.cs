@@ -22,6 +22,8 @@ using UnityEngine;public class Boss1HP:MonoBehaviour{
             blood2FX.GetComponent<ParticleSystem>().Play();
             blood3FX.GetComponent<ParticleSystem>().Play();
             weaponhitSound.Play();boss1hurt.Play();
+            Vector3 difference = (thisBossobject.transform.position - player.transform.position) / 440;
+            thisBossobject.transform.position = new Vector3(thisBossobject.transform.position.x + difference.x, thisBossobject.transform.position.y, thisBossobject.transform.position.z + difference.z);
         }
         if(trig && checklight.heavying){
             currentHealth=currentHealth-exp.playerAttack*1.9f;
@@ -30,7 +32,8 @@ using UnityEngine;public class Boss1HP:MonoBehaviour{
             blood1FX.GetComponent<ParticleSystem>().Play();
             blood2FX.GetComponent<ParticleSystem>().Play();
             blood3FX.GetComponent<ParticleSystem>().Play();
-            weaponhitSound.Play();boss1hurt.Play();
+            weaponhitSound.Play();boss1hurt.Play(); Vector3 difference = (thisBossobject.transform.position - player.transform.position) / 440;
+            thisBossobject.transform.position = new Vector3(thisBossobject.transform.position.x + difference.x, thisBossobject.transform.position.y, thisBossobject.transform.position.z + difference.z);
         }
         if(currentHealth<=0){
             exp.currentExp+=250;
@@ -53,7 +56,8 @@ void OnTriggerEnter(Collider other){
             trig=true;
         }
         if(other.gameObject.tag=="combo3storm"){
-            currentHealth=currentHealth-exp.playerAttack*12f;
+            currentHealth=currentHealth-exp.playerAttack*12f; Vector3 difference = (thisBossobject.transform.position - player.transform.position) /2.5f;
+            thisBossobject.transform.position = new Vector3(thisBossobject.transform.position.x + difference.x, thisBossobject.transform.position.y, thisBossobject.transform.position.z + difference.z);
         }
     }   
     void OnTriggerExit(Collider other){

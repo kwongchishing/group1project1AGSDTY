@@ -25,8 +25,9 @@ using UnityEngine;using UnityEngine.AI;public class powerfulguard_EnemyHealth:Mo
             blood3FX.GetComponent<ParticleSystem>().Play();
             currentHealth=currentHealth-exp.playerAttack;
             hitbyPlayercount++;
-            gethit.Play(); weaponhit.Play();
-            if(hitbyPlayercount>19){anim.SetTrigger("gethit"); hitbyPlayercount=0;}
+            gethit.Play(); weaponhit.Play(); Vector3 difference = (thisGuard.transform.position - player.transform.position) / 507;
+            thisGuard.transform.position = new Vector3(thisGuard.transform.position.x + difference.x, thisGuard.transform.position.y, thisGuard.transform.position.z + difference.z);
+            if (hitbyPlayercount>19){anim.SetTrigger("gethit"); hitbyPlayercount=0;}
         }
         if(trig && checklight.heavying){
             hitFX1spark.GetComponent<ParticleSystem>().Play();
@@ -36,8 +37,9 @@ using UnityEngine;using UnityEngine.AI;public class powerfulguard_EnemyHealth:Mo
             blood3FX.GetComponent<ParticleSystem>().Play();
             currentHealth=currentHealth-exp.playerAttack*1.9f;
             gethit.Play(); weaponhit.Play();
-            hitbyPlayercount++;
-            if(hitbyPlayercount>19){anim.SetTrigger("gethit"); hitbyPlayercount=0;}
+            hitbyPlayercount++; Vector3 difference = (thisGuard.transform.position - player.transform.position) / 507;
+            thisGuard.transform.position = new Vector3(thisGuard.transform.position.x + difference.x, thisGuard.transform.position.y, thisGuard.transform.position.z + difference.z);
+            if (hitbyPlayercount>19){anim.SetTrigger("gethit"); hitbyPlayercount=0;}
         }
         if(currentHealth<=0){
             Weapon.GetComponent<BoxCollider>().enabled=false; Weaponheavy.GetComponent<BoxCollider>().enabled=false;
@@ -53,7 +55,8 @@ using UnityEngine;using UnityEngine.AI;public class powerfulguard_EnemyHealth:Mo
             trig=true;
         }
         if(other.gameObject.tag=="combo3storm"){
-            currentHealth=currentHealth-exp.playerAttack*12f;
+            currentHealth=currentHealth-exp.playerAttack*12f; Vector3 difference = (thisGuard.transform.position - player.transform.position) / 3;
+            thisGuard.transform.position = new Vector3(thisGuard.transform.position.x + difference.x, thisGuard.transform.position.y, thisGuard.transform.position.z + difference.z);
         }
         if(other.gameObject.tag=="electricskill"){
             currentHealth=currentHealth-exp.playerAttack*192f;
