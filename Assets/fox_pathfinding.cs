@@ -11,19 +11,19 @@ using UnityEngine;using UnityEngine.AI;public class fox_pathfinding:MonoBehaviou
 		anim=GetComponent<Animator>();
 	}
 	void Update(){
-		if(Vector3.Distance(Player.transform.position,thisenemy.transform.position)<=10f){
+		if(Vector3.Distance(Player.transform.position,thisenemy.transform.position)<=16f){
 			if(Bull_EnemyHealth.currentHealth>0){transform.LookAt(new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z));}
 			anim.SetBool("walk",true);
 			NM.SetDestination(Player.position);
 			attackmode=0;
 		}
-		if(Vector3.Distance(Player2.transform.position,thisenemy.transform.position)<=10f){
+		if(Vector3.Distance(Player2.transform.position,thisenemy.transform.position)<=16f){
 			if(Bull_EnemyHealth.currentHealth>0){transform.LookAt(new Vector3(Player2.transform.position.x,transform.position.y,Player2.transform.position.z));}
 			anim.SetBool("walk", true);
 			NM.SetDestination(Player2.position);
 			attackmode=0;
 		}
-		if(Vector3.Distance(Player.transform.position,thisenemy.transform.position)<=10f&&Vector3.Distance(Player2.transform.position,thisenemy.transform.position)<=10f){
+		if(Vector3.Distance(Player.transform.position,thisenemy.transform.position)<=16f&&Vector3.Distance(Player2.transform.position,thisenemy.transform.position)<=16f){
 			if(Vector3.Distance(Player.transform.position,transform.position)<Vector3.Distance(Player2.transform.position,transform.position)){
 				if(Bull_EnemyHealth.currentHealth>0){transform.LookAt(new Vector3(Player.transform.position.x,transform.position.y,Player.transform.position.z));}
 				anim.SetBool("walk",true);
@@ -31,7 +31,7 @@ using UnityEngine;using UnityEngine.AI;public class fox_pathfinding:MonoBehaviou
 				attackmode=0;
 			}
 		}
-		if(Vector3.Distance(Player.transform.position,thisenemy.transform.position)<=10f&&Vector3.Distance(Player2.transform.position,thisenemy.transform.position)<=10f){
+		if(Vector3.Distance(Player.transform.position,thisenemy.transform.position)<=16f&&Vector3.Distance(Player2.transform.position,thisenemy.transform.position)<=16f){
 			if(Vector3.Distance(Player.transform.position,transform.position)>Vector3.Distance(Player2.transform.position,transform.position)){
 				if(Bull_EnemyHealth.currentHealth>0){transform.LookAt(new Vector3(Player2.transform.position.x,transform.position.y,Player2.transform.position.z));}
 				anim.SetBool("walk",true);
@@ -57,7 +57,7 @@ using UnityEngine;using UnityEngine.AI;public class fox_pathfinding:MonoBehaviou
 				else{anim.SetTrigger("attack4");}
 			}
 		}
-		if(Vector3.Distance(Player.transform.position,thisenemy.transform.position)>10f&&Vector3.Distance(Player2.transform.position,thisenemy.transform.position)>10f){
+		if(Vector3.Distance(Player.transform.position,thisenemy.transform.position)>16f&&Vector3.Distance(Player2.transform.position,thisenemy.transform.position)>16f){
 			anim.SetBool("walk",true);
 			attackmode=6;
 			if(Bull_EnemyHealth.currentHealth>0){
@@ -69,7 +69,7 @@ using UnityEngine;using UnityEngine.AI;public class fox_pathfinding:MonoBehaviou
 			anim.ResetTrigger("attack3");
 			anim.ResetTrigger("attack4");
 		}		
-		if(Vector3.Distance(transform.position,thisenemy.transform.position)<=2.2f&&Vector3.Distance(Player.transform.position,thisenemy.transform.position)>10f&&Vector3.Distance(Player2.transform.position,thisenemy.transform.position)>10f){
+		if(Vector3.Distance(transform.position,thisenemy.transform.position)<=2.2f&&Vector3.Distance(Player.transform.position,thisenemy.transform.position)>16f&&Vector3.Distance(Player2.transform.position,thisenemy.transform.position)>16f){
 			anim.SetBool("walk",false);
 			transform.LookAt(new Vector3(chan.transform.position.x,transform.position.y,chan.transform.position.z));
 			attackmode=0;

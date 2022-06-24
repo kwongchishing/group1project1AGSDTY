@@ -34,7 +34,7 @@ using UnityEngine;public class AngryLogHealth:MonoBehaviour{
             RFX2.GetComponent<ParticleSystem>().Play();
             punch1.Play();
             Vector3 difference=thisAngry.transform.position-player.transform.position;
-            thisAngry.transform.position=new Vector3(thisAngry.transform.position.x+difference.x,thisAngry.transform.position.y+difference.y,thisAngry.transform.position.z+difference.z);
+            thisAngry.transform.position=new Vector3(thisAngry.transform.position.x+difference.x,thisAngry.transform.position.y,thisAngry.transform.position.z+difference.z);
             anim.SetTrigger("IsGetHit");
         }
         if(other.gameObject.tag=="PlayerHandHeavyAttack"){
@@ -43,7 +43,7 @@ using UnityEngine;public class AngryLogHealth:MonoBehaviour{
             LFX2.GetComponent<ParticleSystem>().Play();
             punch2.Play();
             Vector3 difference=thisAngry.transform.position-player.transform.position;
-            thisAngry.transform.position=new Vector3(thisAngry.transform.position.x+difference.x,thisAngry.transform.position.y+difference.y,thisAngry.transform.position.z+difference.z);
+            thisAngry.transform.position=new Vector3(thisAngry.transform.position.x+difference.x,thisAngry.transform.position.y,thisAngry.transform.position.z+difference.z);
             anim.SetTrigger("IsGetHit");
         }
     }

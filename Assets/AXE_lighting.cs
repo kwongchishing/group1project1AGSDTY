@@ -1,6 +1,7 @@
-using UnityEngine;public class AXE_lighting:MonoBehaviour{
+using UnityEngine;
+public class AXE_lighting:MonoBehaviour{
     public camerashake camerashake;
-    public AudioSource gethurt; public GameObject electricskill,AXE, combo3stormFX; public bool lighting,heavying;public AudioSource lightingSound,heavycombo2Sound,lightslashSound,heavyslashSound,heavyingSound,lightaxecombo2sound,lightaxecombo3sound,combo3StormFXsound;
+    public AudioSource gethurt; public GameObject slash1,electricskill,AXE,combo3stormFX; public bool lighting,heavying;public AudioSource lightingSound,heavycombo2Sound,lightslashSound,heavyslashSound,heavyingSound,lightaxecombo2sound,lightaxecombo3sound,combo3StormFXsound;
     Animator anim;
     void Start(){
         anim=GetComponent<Animator>();
@@ -26,74 +27,75 @@ using UnityEngine;public class AXE_lighting:MonoBehaviour{
         heavying=false;lighting=true;
         lightingSound.Play();
         lightslashSound.Play();
-        AXE.SetActive(true);
+        AXE.SetActive(true); slash1.SetActive(true);
     }
     public void lightingend(){
         lighting=false;
         AXE.SetActive(false);
-        AXE.SetActive(true);
+        AXE.SetActive(true); slash1.SetActive(false);
         anim.ResetTrigger("hurt");
     }
     public void heavyingstart(){
         lighting=false; heavying =true;
         heavyingSound.Play();
         heavyslashSound.Play();
-        AXE.SetActive(true);
+        AXE.SetActive(true); slash1.SetActive(true);
     }
     public void heavyingend(){
         heavying=false;
         AXE.SetActive(false);
         AXE.SetActive(true);
-        anim.ResetTrigger("hurt");
+        anim.ResetTrigger("hurt"); slash1.SetActive(false);
     }
     public void nomove(){
         heavying=false;
-        lighting=false; electricskill.SetActive(false); combo3stormFX.SetActive(false); anim.ResetTrigger("hurt");
+        lighting=false; electricskill.SetActive(false); combo3stormFX.SetActive(false); anim.ResetTrigger("hurt"); slash1.SetActive(false);
     }
     public void runninghit(){
-        anim.ResetTrigger("runninghit");
+        anim.ResetTrigger("runninghit"); slash1.SetActive(false);
     }
     public void gethit(){
         heavying=false;
         lighting=false;
         combo3stormFX.SetActive(false);
         electricskill.SetActive(false);
-        gethurt.Play();}
+        gethurt.Play();slash1.SetActive(false);}
+    
     public void gethitEnd(){
         heavying=false;
-        lighting=false;
+        lighting=false; slash1.SetActive(false);
     }
     public void dodgeStartcancelattack(){
-        anim.ResetTrigger("hurt");lighting=false;heavying=false;
+        anim.ResetTrigger("hurt");lighting=false;heavying=false; slash1.SetActive(false);
     }
     public void dodgeEnd(){
-        anim.ResetTrigger("hurt");lighting=false;heavying=false;
+        anim.ResetTrigger("hurt");lighting=false;heavying=false; slash1.SetActive(false);
     }
     public void lightingcombo2start(){
         heavying=false; lighting =true;
         lightaxecombo2sound.Play();
         lightslashSound.Play();
-        AXE.SetActive(true);
+        AXE.SetActive(true); slash1.SetActive(true);
     }
     public void lightingcombo2end(){
         lighting=false;
         AXE.SetActive(false);
         AXE.SetActive(true);
-        anim.ResetTrigger("hurt");
+        anim.ResetTrigger("hurt"); slash1.SetActive(false);
     }
     public void lightingcombo3start(){
         heavying=false; lighting =false;
         lightaxecombo3sound.Play();
         lightslashSound.Play();
         combo3stormFX.SetActive(true);
-        AXE.SetActive(true); combo3StormFXsound.Play();
+        AXE.SetActive(true); combo3StormFXsound.Play(); slash1.SetActive(true);
     }
     public void lightingcombo3end(){
         lighting=false;
         AXE.SetActive(false);
         AXE.SetActive(true);
         anim.ResetTrigger("hurt");
-        combo3stormFX.SetActive(false);
+        combo3stormFX.SetActive(false); slash1.SetActive(false);
     }
     public void axeMovesoundincombo2(){
         lightslashSound.Play();
@@ -102,13 +104,13 @@ using UnityEngine;public class AXE_lighting:MonoBehaviour{
         lighting = false; heavying =true;
         heavycombo2Sound.Play();
         heavyslashSound.Play();
-        AXE.SetActive(true);
+        AXE.SetActive(true); slash1.SetActive(true);
     }
     public void heavycombo2end(){
         lighting = false; heavying =false;
         AXE.SetActive(false);
         AXE.SetActive(true);
-        anim.ResetTrigger("hurt");
+        anim.ResetTrigger("hurt"); slash1.SetActive(false);
     }
     public void shake(){
         camerashake.shakeDuration=0.007f;

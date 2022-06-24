@@ -24,7 +24,8 @@ using UnityEngine;using UnityEngine.AI;public class fox_EnemyHealth:MonoBehaviou
             blood3FX.GetComponent<ParticleSystem>().Play();
             currentHealth=currentHealth-exp.playerAttack;
             hitbyPlayercount++;
-            gethit.Play(); weaponhit.Play();
+            gethit.Play(); weaponhit.Play(); Vector3 difference = (thisBull.transform.position - player.transform.position) / 550;
+            thisBull.transform.position = new Vector3(thisBull.transform.position.x + difference.x, thisBull.transform.position.y, thisBull.transform.position.z + difference.z);
         }
         if (trig && checklight.heavying){
             hitFX1spark.GetComponent<ParticleSystem>().Play();
@@ -34,7 +35,8 @@ using UnityEngine;using UnityEngine.AI;public class fox_EnemyHealth:MonoBehaviou
             blood3FX.GetComponent<ParticleSystem>().Play();
             currentHealth = currentHealth - exp.playerAttack * 1.2f;
             gethit.Play(); weaponhit.Play();
-            hitbyPlayercount++;
+            hitbyPlayercount++; Vector3 difference = (thisBull.transform.position - player.transform.position) / 550;
+            thisBull.transform.position = new Vector3(thisBull.transform.position.x + difference.x, thisBull.transform.position.y, thisBull.transform.position.z + difference.z);
         }
         if (currentHealth <= 0){
             bull_Enemypathfinding.attackcloseCol(); Destroy(HealthBar); bull_Enemypathfinding.attackmode = 6; trig = false;
@@ -52,7 +54,8 @@ using UnityEngine;using UnityEngine.AI;public class fox_EnemyHealth:MonoBehaviou
         }
         if (other.gameObject.tag == "combo3storm")
         {
-            currentHealth = currentHealth - exp.playerAttack * 12f;
+            currentHealth = currentHealth - exp.playerAttack * 12f; Vector3 difference = (thisBull.transform.position - player.transform.position) / 2.6f;
+            thisBull.transform.position = new Vector3(thisBull.transform.position.x + difference.x, thisBull.transform.position.y, thisBull.transform.position.z + difference.z);
         }
         if (other.gameObject.tag == "electricskill")
         {
