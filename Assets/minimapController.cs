@@ -1,7 +1,7 @@
 using UnityEngine;public class minimapController:MonoBehaviour{
     public save2 save2;
-    float distance6,distance5,distance4,distance3,distance,distance2;
-    public GameObject NPCpet,chan,findgirlmission,NPC4, fire1,fire3,fire4,fire5,fire6,fire7,fire8,towergreenFX,sisterweaponminimapicon,NPC3,NPC2,Amissionminimapicon,defensehouseminimapicon,mmpointer,healskillUI,Player,seller,minimapcamera,minimap,NPC1;
+    float distance6,distance5,distance4,distance3,distance,distance2,distance7;
+    public GameObject NPCweapon,NPCpet,chan,findgirlmission,NPC4, fire1,fire3,fire4,fire5,fire6,fire7,fire8,towergreenFX,sisterweaponminimapicon,NPC3,NPC2,Amissionminimapicon,defensehouseminimapicon,mmpointer,healskillUI,Player,seller,minimapcamera,minimap,NPC1;
     void Update(){
         distance=Vector3.Distance(Player.transform.position,seller.transform.position);
         distance2=Vector3.Distance(Player.transform.position,NPC1.transform.position);
@@ -9,6 +9,7 @@ using UnityEngine;public class minimapController:MonoBehaviour{
         distance4=Vector3.Distance(Player.transform.position,NPC3.transform.position);
         distance5=Vector3.Distance(Player.transform.position,NPC4.transform.position);
         distance6=Vector3.Distance(Player.transform.position,NPCpet.transform.position);
+        distance7=Vector3.Distance(Player.transform.position,NPCweapon.transform.position);
         if(save2.finishgame>0){mmpointer.SetActive(false);
             if(save2.isinshop){
                 minimapcamera.SetActive(false);
@@ -24,7 +25,8 @@ using UnityEngine;public class minimapController:MonoBehaviour{
                 minimapcamera.SetActive(true);
                 minimap.SetActive(true);
             }
-            if(save2.isjoined==false&&save2.isinshop==true&&distance>20f&&distance2>30f&&distance3>30f&&distance4>20f&&distance5>20f&&distance6>20f){
+            if(save2.isjoined==false&&save2.isinshop==true&&distance>20f&&distance2>30f&&distance3>30f&&distance4>20f&&distance5>20f&&distance6>20f&&distance7>30f)
+            {
                 save2.isinshop=false;
             }
             if(save2.isjoined==false){               
