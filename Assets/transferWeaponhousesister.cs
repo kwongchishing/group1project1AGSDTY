@@ -4,7 +4,7 @@ using UnityEngine;public class transferWeaponhousesister:MonoBehaviour{
     public Transform p1,p2;
     public save2 save2;
     public AudioSource opendoorsound;
-    public GameObject Player1;
+    public GameObject newbgm1,weaponbgm,Player1;
     void Update(){
         distance=Vector3.Distance(p1.transform.position,p2.transform.position);
         if(Input.GetKeyDown(KeyCode.KeypadEnter)){
@@ -14,6 +14,8 @@ using UnityEngine;public class transferWeaponhousesister:MonoBehaviour{
             if(distance<=8f){
                 Player1.transform.position=new Vector3(-207.95802307128907f, -138.77f, 122.84185791015625f);
                 save2.isinshop=true;
+                newbgm1.SetActive(false);
+                weaponbgm.SetActive(true);
             }
         }
     }

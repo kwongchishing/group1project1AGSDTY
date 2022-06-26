@@ -1,7 +1,7 @@
 using UnityEngine;public class minimapController:MonoBehaviour{
     public save2 save2;
     float distance6,distance5,distance4,distance3,distance,distance2,distance7;
-    public GameObject NPCweapon,NPCpet,chan,findgirlmission,NPC4, fire1,fire3,fire4,fire5,fire6,fire7,fire8,towergreenFX,sisterweaponminimapicon,NPC3,NPC2,Amissionminimapicon,defensehouseminimapicon,mmpointer,healskillUI,Player,seller,minimapcamera,minimap,NPC1;
+    public GameObject NPCweapon,NPCpet,chan,findgirlmission,NPC4,towergreenFX,sisterweaponminimapicon,NPC3,NPC2,Amissionminimapicon,defensehouseminimapicon,mmpointer,healskillUI,Player,seller,minimapcamera,minimap,NPC1;
     void Update(){
         distance=Vector3.Distance(Player.transform.position,seller.transform.position);
         distance2=Vector3.Distance(Player.transform.position,NPC1.transform.position);
@@ -48,16 +48,7 @@ using UnityEngine;public class minimapController:MonoBehaviour{
         }
         if(save2.defenseMfinish>0){
             Destroy(defensehouseminimapicon); NPC3.GetComponent<SphereCollider>().enabled=false;
-        }
-        if(save2.defenseMfail>0){
-            fire1.SetActive(true);
-            fire3.SetActive(true);
-            fire4.SetActive(true);
-            fire5.SetActive(true);
-            fire6.SetActive(true);
-            fire7.SetActive(true);
-            fire8.SetActive(true);
-        }
+        }        
         if(save2.findgirlMaccept>0&&save2.findgirlMfinish<1){
             findgirlmission.SetActive(true);NPC4.GetComponent<SphereCollider>().enabled=false;
             chan.SetActive(false);
