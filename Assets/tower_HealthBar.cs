@@ -7,15 +7,13 @@ using UnityEngine;using UnityEngine.UI;public class tower_HealthBar:MonoBehaviou
         boyhealth.maxHealth=5000; slider=GetComponent<Slider>();
     }
     void Update(){
-        if (slider.value <= slider.minValue)
-        {
-            fillImage.enabled = false;
+        if(slider.value<=slider.minValue){
+            fillImage.enabled=false;
         }
-        if (slider.value > slider.minValue && !fillImage.enabled)
-        {
-            fillImage.enabled = true;
+        if(slider.value>slider.minValue&&!fillImage.enabled){
+            fillImage.enabled=true;
         }
-        float fillValue = boyhealth.currentHealth / boyhealth.maxHealth;
-        slider.value = fillValue;
+        float fillValue=boyhealth.currentHealth/boyhealth.maxHealth;
+        slider.value=fillValue;
     }
 }

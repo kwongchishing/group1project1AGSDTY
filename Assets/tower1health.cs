@@ -3,7 +3,7 @@ using UnityEngine;public class tower1health:MonoBehaviour{
     public float currentHealth,maxHealth,hitbymonstercount;
     public save2 save2;
     public Transform fox5,fox, fox2,fox3,fox4;
-    public GameObject missionfailcanvas,TowerhealthCanvas, fire7,fire8,fire5,fire6,fire3,fire4,fire1,bgm1,defensebgm,defenseTowerFX,defendtowermonster,All_colliWall;
+    public GameObject defenseminimapicon,missionfailcanvas,TowerhealthCanvas,fire7,fire8,fire5,fire6,fire3,fire4,fire1,bgm1,defensebgm,defenseTowerFX,defendtowermonster,All_colliWall;
     void Start(){
         currentHealth=5000f;
         maxHealth=5000f;
@@ -26,6 +26,7 @@ using UnityEngine;public class tower1health:MonoBehaviour{
             bgm1.SetActive(true);
             missionfailcanvas.SetActive(true);
             Destroy(TowerhealthCanvas);
+            Destroy(defenseminimapicon);
             Destroy(this.gameObject);
         }
         if (currentHealth<=4000){
