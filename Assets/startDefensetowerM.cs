@@ -1,6 +1,6 @@
 using UnityEngine;public class startDefensetowerM:MonoBehaviour{
     public save2 save2;
-    public GameObject leavecanvas,acceptedmission,door,talkdefmissionCanvas;
+    public GameObject towerFX,leavecanvas, acceptedmission,door,talkdefmissionCanvas;
     void Update(){
         if(Input.GetKeyDown(KeyCode.Return)||Input.GetKeyDown(KeyCode.E)){
             save2.defenseMaccept++;
@@ -8,6 +8,7 @@ using UnityEngine;public class startDefensetowerM:MonoBehaviour{
             acceptedmission.SetActive(true);
             leavecanvas.SetActive(true);
             Destroy(talkdefmissionCanvas);
+            towerFX.SetActive(true);
         }
     }
 }

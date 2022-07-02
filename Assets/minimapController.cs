@@ -1,7 +1,7 @@
 using UnityEngine;public class minimapController:MonoBehaviour{
     public save2 save2;
     float distance6,distance5,distance4,distance3,distance,distance2,distance7;
-    public GameObject NPCweapon,NPCpet,chan,findgirlmission,NPC4,NPC3,NPC2,mmpointer,healskillUI,Player,seller,minimapcamera,minimap,NPC1;
+    public GameObject NPCweapon,NPCpet,NPC4,NPC3,NPC2,mmpointer,healskillUI,Player,seller,minimapcamera,minimap,NPC1;
     void Update(){
         distance=Vector3.Distance(Player.transform.position,seller.transform.position);
         distance2=Vector3.Distance(Player.transform.position,NPC1.transform.position);
@@ -29,16 +29,9 @@ using UnityEngine;public class minimapController:MonoBehaviour{
             {
                 save2.isinshop=false;
             }
-            if(save2.isjoined==false){               
+            if(save2.isjoined==false){
                 healskillUI.SetActive(false);
             }
-        }                
-        if(save2.findgirlMaccept>0&&save2.findgirlMfinish<1){
-            findgirlmission.SetActive(true);NPC4.GetComponent<SphereCollider>().enabled=false;
-            chan.SetActive(false);
-        }
-        if(save2.findgirlMfinish>0){
-            NPC4.GetComponent<SphereCollider>().enabled=false;
         }
     }
 }

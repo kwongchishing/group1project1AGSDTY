@@ -5,7 +5,7 @@ using UnityEngine;using UnityEngine.UI;public class wAXEloadGame:MonoBehaviour{
     public lovexp lovexp;
     public lovexp3 lovexp3;
     public lovexp2 lovexp2;
-    public GameObject defenseNPC,towergreenFX;
+    public GameObject findgirlminiicon,defenseNPC,towergreenFX,fakefindgirlhouse,mother;
     public GameObject defensehouseminimapicon,Amissionminimapicon,well1,fire1,fire3,fire4,fire5,fire6,fire7,fire8,findgirlmission,sportcol1,sportcol2,fakeOhouse,fakePhouse,GetKeycanvas,dragonforsaveplayer,finalbossScene,realweaponhouse,fakeweaponhouse,shitcount, realpet3, realpet4,realpet2,fakepethouse,realpethouse,talkcanvaspet,petleavecanvas,NPCpet,fakepet,realpet,chan,Real_houes4,potionHouse2,House1,House2,House3,fakedefenseMissionhouse,swordinwaitsisterhand,swordinp2hand,sisterweaponNPC,talkgetweaponCanvas,housesmokeFX,townwall,townwall2,All_newgame2notes,new2gamecollider,newgame2startPanel,myhousefake,Amission1house,mainmission1house1,bmainmission1house1,Ostoneminiicon,Pstoneminiicon,secretpathminiicon,missionbook,All_BULL_Enemy,All_BULL_Enemy2,icon2,playerInfoPanel,Lanters,newmainmission1,sisterwaitforjoin,Bushes,VillageFence,VillageFence2, OtherProps,OtherProps2,tree,tree2,undergroundFinalboss,undergroundFinalboss2,real_Pstonehouse,real_Ostonehouse,StonePuzzleCanvas,LetterOSTONE,GetOStone,undergroud,bgm1Collider,bgm3Collider,All_guard,finishgameCanvas,Allshieldman,newbgm1,Allnotes,mmpointer,Pstonehousearrow,buttoncollider,electricUI,talkwithsistercollider,well2Stone,well3Stone,well4Stone,mission3house,mission3housefinished,Pstoneminimapicon,trap1,trap2,trap3,trap4,Btrap1,Btrap2,saw1,saw2,saw3,saw4,saw5,saw6,saw7,axe1,axe2,axe3,hammer1,hammer2,All_powerfulGuard,PstonePlace,Pstonefinish,Pstone,groupbarrel,Ostoneminimapicon,All_turtle,whereOstone,NotbombBarrel,OstonePlace,Ostonefinish,bg4,AlloldmanEnemy,Ostone,GoodBadCountBar,SDBDfile,minimapiconKey,mainmissiontext,oldplayer,player,startmission,howtoplay,Playername,healthbar,expbar,starttext,axeUI,potionCount,punchUI,firstangrylog,potion1,potion2,potion3,icon,sportFunction,MathFunction,saveNPC1,saveNPC2,moneybag,cage,notes8,angry2,angry3,angry5,humanenemy,oldmusic,brokenaxechecker1,humanenemy2,GateKey,gateL,gateR,gateCollider,boss1,unrealboss1,runningGame,saveNPCforkillboss1,brokenaxechecker2,minimapiconmchouse,minimapiconGate;
 public AudioSource main2music;public Texture2D cursorArrow;public Ischange changeornot;public save2 save;
     void Start(){
@@ -364,6 +364,7 @@ public AudioSource main2music;public Texture2D cursorArrow;public Ischange chang
             fakedefenseMissionhouse.GetComponent<SphereCollider>().enabled=true;
             fakepethouse.GetComponent<SphereCollider>().enabled=true;
             fakeweaponhouse.GetComponent<SphereCollider>().enabled=true;
+            fakefindgirlhouse.GetComponent<SphereCollider>().enabled = true;
             new2gamecollider.SetActive(true);
             Destroy(finalbossScene);
             save.bull_kingisdead=PlayerPrefs.GetFloat("bull_kingisdead");
@@ -376,13 +377,13 @@ public AudioSource main2music;public Texture2D cursorArrow;public Ischange chang
                 swordinp2hand.SetActive(true);
                 sisterweaponNPC.GetComponent<SphereCollider>().enabled=false;
                 Destroy(talkgetweaponCanvas);
+                Destroy(Amissionminimapicon);
             }
             save.defenseMaccept=PlayerPrefs.GetFloat("defenseMaccept");
             save.defenseMfinish=PlayerPrefs.GetFloat("defenseMfinish");
             save.defenseMfail=PlayerPrefs.GetFloat("defenseMfail");
             save.mainmission1finish=PlayerPrefs.GetFloat("mainmission1finish");
-            if (save.defenseMfail > 0)
-            {
+            if(save.defenseMfail>0){
                 fire1.SetActive(true);
                 fire3.SetActive(true);
                 fire4.SetActive(true);
@@ -395,9 +396,6 @@ public AudioSource main2music;public Texture2D cursorArrow;public Ischange chang
             save.findgirlMfinish=PlayerPrefs.GetFloat("findgirlMfinish");
             save.petStart=PlayerPrefs.GetFloat("petStart");
             save.shitcount=PlayerPrefs.GetFloat("shitcount");
-            lovexp.currentLove = PlayerPrefs.GetFloat("currentLove");
-            lovexp2.currentLove=PlayerPrefs.GetFloat("currentLove2");
-            lovexp3.currentLove = PlayerPrefs.GetFloat("currentLove3");
             if (save.petStart==1){
                 Destroy(fakepet);
                 realpet.SetActive(true);
@@ -429,19 +427,22 @@ public AudioSource main2music;public Texture2D cursorArrow;public Ischange chang
                 NPCpet.GetComponent<SphereCollider>().enabled=false;
                 Destroy(talkcanvaspet);
             }
-            if (save.newgamesaved==1){
+            if(save.newgamesaved==1){
                 player.transform.position=new Vector3(978.670227f,-117.409554f,-113.36776f);
                 save.isinshop=true;
             }
+            if(save.findgirlMaccept>0&&save.findgirlMfinish<1){
+                findgirlmission.SetActive(true); mother.GetComponent<SphereCollider>().enabled=false;
+            }
+            if (save.findgirlMfinish<1){findgirlminiicon.SetActive(true);}
             if(save.findgirlMfinish>0){
                 chan.SetActive(true);
                 Destroy(findgirlmission);
+                mother.GetComponent<SphereCollider>().enabled=false;
+                Destroy(findgirlminiicon);
             }
             if(save.sisterweapon<1){
                 Amissionminimapicon.SetActive(true);
-            }
-            if(save.sisterweapon>0){
-                Destroy(Amissionminimapicon);
             }
             if(save.defenseMfinish<1){
                 defensehouseminimapicon.SetActive(true);

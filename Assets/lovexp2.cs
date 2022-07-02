@@ -5,7 +5,8 @@ using UnityEngine;public class lovexp2:MonoBehaviour{
     public save2 save2;
     public GameObject pet2,pet3,feedtext,feedtextsister,feedFX;
     void Start(){
-        currentLove=0f;maxLove=300f;        
+        currentLove=0f;maxLove=300f;
+        if(PlayerPrefs.HasKey("currentLove2")) currentLove=PlayerPrefs.GetFloat("currentLove2");
     }
     void Update(){
                    if (Vector3.Distance(Player1.transform.position, transform.position) < 3f)

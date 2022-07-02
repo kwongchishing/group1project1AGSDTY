@@ -7,6 +7,7 @@ using UnityEngine;public class lovexp:MonoBehaviour{
     void Start(){
             maxLove = 200f;
             currentLove = 0f;
+        if(PlayerPrefs.HasKey("currentLove")) currentLove=PlayerPrefs.GetFloat("currentLove");
     }
     void Update() {
         if (Vector3.Distance(Player1.transform.position, transform.position) < 3f)
