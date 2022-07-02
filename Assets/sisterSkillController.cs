@@ -44,6 +44,6 @@ using UnityEngine;using UnityEngine.UI;public class sisterSkillController:MonoBe
     public void Healskill1End()
     {
         healskillFX1.SetActive(false);
-        healskillFX2.SetActive(false);
+        healskillFX2.SetActive(false); anim.ResetTrigger("hurt");
     }
 }
