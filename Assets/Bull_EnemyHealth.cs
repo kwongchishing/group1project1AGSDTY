@@ -24,8 +24,8 @@ using UnityEngine;using UnityEngine.AI;public class Bull_EnemyHealth:MonoBehavio
             blood3FX.GetComponent<ParticleSystem>().Play();
             currentHealth=currentHealth-exp.playerAttack;
             hitbyPlayercount++;
-            gethit.Play(); weaponhit.Play();Vector3 difference = (thisBull.transform.position - player.transform.position)/550;
-            thisBull.transform.position = new Vector3(thisBull.transform.position.x + difference.x, thisBull.transform.position.y, thisBull.transform.position.z + difference.z);
+            gethit.Play(); weaponhit.Play();Vector3 difference=(thisBull.transform.position-player.transform.position)/550;
+            thisBull.transform.position=new Vector3(thisBull.transform.position.x+difference.x,thisBull.transform.position.y,thisBull.transform.position.z+difference.z);
         }
         if(trig&&checklight.heavying){
             hitFX1spark.GetComponent<ParticleSystem>().Play();
@@ -35,8 +35,8 @@ using UnityEngine;using UnityEngine.AI;public class Bull_EnemyHealth:MonoBehavio
             blood3FX.GetComponent<ParticleSystem>().Play();
             currentHealth=currentHealth-exp.playerAttack*1.2f;
             gethit.Play(); weaponhit.Play();
-            hitbyPlayercount++; Vector3 difference = (thisBull.transform.position - player.transform.position)/550;
-            thisBull.transform.position = new Vector3(thisBull.transform.position.x + difference.x, thisBull.transform.position.y, thisBull.transform.position.z + difference.z);
+            hitbyPlayercount++; Vector3 difference=(thisBull.transform.position-player.transform.position)/550;
+            thisBull.transform.position=new Vector3(thisBull.transform.position.x+difference.x,thisBull.transform.position.y,thisBull.transform.position.z+difference.z);
         }
         if(currentHealth<=0){
             bull_Enemypathfinding.attackcloseCol(); bull_Enemypathfinding.heavyattackcloseCol();Destroy(HealthBar);bull_Enemypathfinding.attackmode=6;trig=false;
@@ -51,23 +51,22 @@ using UnityEngine;using UnityEngine.AI;public class Bull_EnemyHealth:MonoBehavio
             trig=true;
         }
         if(other.gameObject.tag=="chan"){
-            currentHealth-=10; hitbyPlayercount+=100;
+            currentHealth= currentHealth-10-save2.chanextraattack; hitbyPlayercount+=100;
             chanweaponhit.Play(); gethit.Play(); chanblood1FX.GetComponent<ParticleSystem>().Play();
             chanblood2FX.GetComponent<ParticleSystem>().Play();
             chanblood3FX.GetComponent<ParticleSystem>().Play();
         }
         if (other.gameObject.tag=="combo3storm"){
-            currentHealth=currentHealth-exp.playerAttack*12f; Vector3 difference = (thisBull.transform.position - player.transform.position) /2.6f;
-            thisBull.transform.position = new Vector3(thisBull.transform.position.x + difference.x, thisBull.transform.position.y, thisBull.transform.position.z + difference.z);
+            currentHealth=currentHealth-exp.playerAttack*12f; Vector3 difference = (thisBull.transform.position-player.transform.position)/2.6f;
+            thisBull.transform.position=new Vector3(thisBull.transform.position.x+difference.x,thisBull.transform.position.y,thisBull.transform.position.z+difference.z);
         }
         if(other.gameObject.tag=="electricskill"){
             currentHealth=currentHealth-exp.playerAttack*282f;
             gethit.Play();
             anim.SetTrigger("gethit");
         }
-        if (other.gameObject.tag == "sisterweapon")
-        {
-            currentHealth = currentHealth - exp.playerAttack;
+        if(other.gameObject.tag=="sisterweapon"){
+            currentHealth=currentHealth-10-save2.sisterextraattack;
             hitbyPlayercount++;
             gethit.Play(); weaponhit.Play();
             sisterhitlight.GetComponent<ParticleSystem>().Play();
@@ -75,12 +74,11 @@ using UnityEngine;using UnityEngine.AI;public class Bull_EnemyHealth:MonoBehavio
             sblood1FX.GetComponent<ParticleSystem>().Play();
             sblood2FX.GetComponent<ParticleSystem>().Play();
             sblood3FX.GetComponent<ParticleSystem>().Play();
-            Vector3 difference2 = (thisBull.transform.position - sister.transform.position)/18;
+            Vector3 difference2 = (thisBull.transform.position - sister.transform.position)/17;
             thisBull.transform.position = new Vector3(thisBull.transform.position.x + difference2.x, thisBull.transform.position.y, thisBull.transform.position.z + difference2.z);
         }
-        if (other.gameObject.tag == "sisterheavyweapon")
-        {
-            currentHealth = currentHealth - exp.playerAttack*10;
+        if(other.gameObject.tag=="sisterheavyweapon"){
+            currentHealth=currentHealth-30-save2.sisterextraattack;
             hitbyPlayercount++;
             gethit.Play(); weaponhit.Play();
             sisterhitlight.GetComponent<ParticleSystem>().Play();
@@ -88,18 +86,18 @@ using UnityEngine;using UnityEngine.AI;public class Bull_EnemyHealth:MonoBehavio
             sblood1FX.GetComponent<ParticleSystem>().Play();
             sblood2FX.GetComponent<ParticleSystem>().Play();
             sblood3FX.GetComponent<ParticleSystem>().Play();
-            Vector3 difference2 = (thisBull.transform.position - sister.transform.position) /10;
+            Vector3 difference2 = (thisBull.transform.position - sister.transform.position) /9;
             thisBull.transform.position = new Vector3(thisBull.transform.position.x + difference2.x, thisBull.transform.position.y, thisBull.transform.position.z + difference2.z);
         }
         if (other.gameObject.tag=="p2lightattack"){
-            currentHealth = currentHealth - exp.playerAttack*1.9f;
+            currentHealth=currentHealth-3;
             hitbyPlayercount++;
             punch.Play();
             sisterhitFX1.GetComponent<ParticleSystem>().Play();
             sisterhitFX2.GetComponent<ParticleSystem>().Play(); 
         }
         if(other.gameObject.tag=="p2heavyattack"){
-            currentHealth=currentHealth-exp.playerAttack*2.9f;
+            currentHealth=currentHealth-5;
             hitbyPlayercount++;
             punch2.Play();
             sisterhitFX3.GetComponent<ParticleSystem>().Play();
@@ -111,11 +109,11 @@ using UnityEngine;using UnityEngine.AI;public class Bull_EnemyHealth:MonoBehavio
             currentHealth=currentHealth-exp.playerAttack*482f*Time.deltaTime;
         }
         if(other.gameObject.tag=="sisterweapon"){
-            currentHealth=currentHealth-exp.playerAttack;
+            currentHealth=currentHealth-10-save2.sisterextraattack;
         }
         if (other.gameObject.tag == "sisterheavyweapon")
         {
-            currentHealth = currentHealth - exp.playerAttack*10;
+            currentHealth = currentHealth-30-save2.sisterextraattack;
         }
     }
     void OnTriggerExit(Collider other){

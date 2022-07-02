@@ -396,6 +396,8 @@ public AudioSource main2music;public Texture2D cursorArrow;public Ischange chang
             save.findgirlMfinish=PlayerPrefs.GetFloat("findgirlMfinish");
             save.petStart=PlayerPrefs.GetFloat("petStart");
             save.shitcount=PlayerPrefs.GetFloat("shitcount");
+            save.sisterextraattack=PlayerPrefs.GetFloat("sisterextraattack");
+            save.chanextraattack = PlayerPrefs.GetFloat("chanextraattack");
             if (save.petStart==1){
                 Destroy(fakepet);
                 realpet.SetActive(true);
