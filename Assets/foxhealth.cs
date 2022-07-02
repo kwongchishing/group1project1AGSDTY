@@ -1,7 +1,7 @@
 using UnityEngine;using UnityEngine.AI;public class foxhealth:MonoBehaviour{
     public AudioSource chanweaponhit,punch2, punch, gethit, weaponhit;
     public float currentHealth, maxHealth;
-    public GameObject chanblood1FX,chanblood2FX,chanblood3FX,fox_hpbarFunction,sisterhitFX3,sisterhitFX4,sisterhitFX1,sisterhitFX2,player,hitFX1spark,hitFX1light,blood1FX,blood2FX,blood3FX,thisBull,HealthBar;
+    public GameObject sisterhitlight, sisterhitspark,sblood1FX, sblood2FX, sblood3FX, chanblood1FX,chanblood2FX,chanblood3FX,fox_hpbarFunction,sisterhitFX3,sisterhitFX4,sisterhitFX1,sisterhitFX2,player,hitFX1spark,hitFX1light,blood1FX,blood2FX,blood3FX,thisBull,HealthBar;
     Animator anim;
     public Transform tower;
     public tower1health tower1health;
@@ -52,6 +52,26 @@ using UnityEngine;using UnityEngine.AI;public class foxhealth:MonoBehaviour{
         if(other.gameObject.tag=="AXE"){
             trig=true;
         }
+        if (other.gameObject.tag == "sisterweapon")
+        {
+            currentHealth = currentHealth - exp.playerAttack;
+            gethit.Play(); weaponhit.Play();
+            sisterhitlight.GetComponent<ParticleSystem>().Play();
+            sisterhitspark.GetComponent<ParticleSystem>().Play();
+            sblood1FX.GetComponent<ParticleSystem>().Play();
+            sblood2FX.GetComponent<ParticleSystem>().Play();
+            sblood3FX.GetComponent<ParticleSystem>().Play();
+        }
+        if(other.gameObject.tag == "sisterheavyweapon")
+        {
+            currentHealth=currentHealth-exp.playerAttack*10;
+            gethit.Play(); weaponhit.Play();
+            sisterhitlight.GetComponent<ParticleSystem>().Play();
+            sisterhitspark.GetComponent<ParticleSystem>().Play();
+            sblood1FX.GetComponent<ParticleSystem>().Play();
+            sblood2FX.GetComponent<ParticleSystem>().Play();
+            sblood3FX.GetComponent<ParticleSystem>().Play();
+        }
         if (other.gameObject.tag == "chan")
         {
             currentHealth = currentHealth-=10;chanweaponhit.Play(); gethit.Play();
@@ -81,6 +101,14 @@ using UnityEngine;using UnityEngine.AI;public class foxhealth:MonoBehaviour{
     void OnTriggerStay(Collider other){
         if(other.gameObject.tag=="electricskill"){
             currentHealth=currentHealth-exp.playerAttack*82f*Time.deltaTime;
+        }
+        if (other.gameObject.tag == "sisterweapon")
+        {
+            currentHealth = currentHealth - exp.playerAttack;
+        }
+        if (other.gameObject.tag == "sisterheavyweapon")
+        {
+            currentHealth = currentHealth - exp.playerAttack * 10;
         }
     }
     void OnTriggerExit(Collider other){
