@@ -2,7 +2,7 @@ using UnityEngine;public class sisternoweaponcontroller:MonoBehaviour{
     public save2 save2;
     public AudioSource hahahasound,sisterdamage, dodgesound,sisterattack2,sisterattack1;
     Animator anim;
-    public GameObject sisterheavyweapon,sisterslashVFX,sisterweapon,healFXp1,healFXp2,LeftLeg,RightLeg;
+    public GameObject iceFX,sisterheavyweapon, sisterslashVFX,sisterweapon,healFXp1,healFXp2,LeftLeg,RightLeg;
     BoxCollider Bcollider,Ccollider,Hcollider;
     MeshCollider Wcollider;
     void Start(){
@@ -22,21 +22,21 @@ using UnityEngine;public class sisternoweaponcontroller:MonoBehaviour{
     }
     public void lightslash1start(){
         Wcollider.enabled=true; sisterslashVFX.SetActive(true);
-        sisterattack1.Play();
+        sisterattack1.Play(); iceFX.SetActive(true);
     }
     public void lightslash1end(){
-        Wcollider.enabled=false; sisterslashVFX.SetActive(false); anim.ResetTrigger("hurt");
+        Wcollider.enabled=false; sisterslashVFX.SetActive(false); anim.ResetTrigger("hurt"); iceFX.SetActive(false);
     }
     public void heavyslashstart()
     {
         Wcollider.enabled = false;
         Hcollider.enabled = true; sisterslashVFX.SetActive(true);
-        sisterattack2.Play();
+        sisterattack2.Play(); iceFX.SetActive(true);
     }
     public void heavyslashend()
     {
         Wcollider.enabled = false;
-        Hcollider.enabled = false; sisterslashVFX.SetActive(false); anim.ResetTrigger("hurt");
+        Hcollider.enabled = false; sisterslashVFX.SetActive(false); anim.ResetTrigger("hurt"); iceFX.SetActive(false);
     }
     public void lightattacklegstart(){
         healFXp1.SetActive(false);
@@ -61,28 +61,28 @@ using UnityEngine;public class sisternoweaponcontroller:MonoBehaviour{
     }
     public void sisterIdlestart(){
         Ccollider.enabled=false;Bcollider.enabled=false;healFXp1.SetActive(false);
-        healFXp2.SetActive(false); Wcollider.enabled=false; sisterslashVFX.SetActive(false); Hcollider.enabled = false;
+        healFXp2.SetActive(false); Wcollider.enabled=false; sisterslashVFX.SetActive(false); Hcollider.enabled = false; iceFX.SetActive(false);
     }
     public void sisterIdleend(){
         Ccollider.enabled=false;Bcollider.enabled=false;healFXp1.SetActive(false);
-        healFXp2.SetActive(false); Wcollider.enabled=false; sisterslashVFX.SetActive(false); Hcollider.enabled = false;
+        healFXp2.SetActive(false); Wcollider.enabled=false; sisterslashVFX.SetActive(false); Hcollider.enabled = false; iceFX.SetActive(false);
     }
     public void sisterdodgestart(){
         dodgesound.Play();Ccollider.enabled=false;Bcollider.enabled=false;anim.ResetTrigger("hurt");healFXp1.SetActive(false);
-        healFXp2.SetActive(false); Wcollider.enabled=false; sisterslashVFX.SetActive(false); Hcollider.enabled = false;
+        healFXp2.SetActive(false); Wcollider.enabled=false; sisterslashVFX.SetActive(false); Hcollider.enabled = false; iceFX.SetActive(false);
     }
     public void sisterdodgeend(){
         anim.ResetTrigger("hurt");Ccollider.enabled=false;Bcollider.enabled=false;healFXp1.SetActive(false);
-        healFXp2.SetActive(false); Wcollider.enabled=false; sisterslashVFX.SetActive(false); Hcollider.enabled = false;
+        healFXp2.SetActive(false); Wcollider.enabled=false; sisterslashVFX.SetActive(false); Hcollider.enabled = false; iceFX.SetActive(false);
     }
     public void sisterHurtStart(){
         sisterdamage.Play();
         Ccollider.enabled=false;Bcollider.enabled=false;healFXp1.SetActive(false);
-        healFXp2.SetActive(false); Wcollider.enabled=false; sisterslashVFX.SetActive(false); Hcollider.enabled = false;
+        healFXp2.SetActive(false); Wcollider.enabled=false; sisterslashVFX.SetActive(false); Hcollider.enabled = false; iceFX.SetActive(false);
     }
     public void sisterHurtEnd(){
         Ccollider.enabled=false;Bcollider.enabled=false;healFXp1.SetActive(false);
-        healFXp2.SetActive(false); Wcollider.enabled=false; sisterslashVFX.SetActive(false); Hcollider.enabled = false;
+        healFXp2.SetActive(false); Wcollider.enabled=false; sisterslashVFX.SetActive(false); Hcollider.enabled = false; iceFX.SetActive(false);
         anim.ResetTrigger("hurt");
     }
     public void resethurt()
