@@ -5,7 +5,7 @@ using UnityEngine;using UnityEngine.UI;public class wAXEloadGame:MonoBehaviour{
     public lovexp lovexp;
     public lovexp3 lovexp3;
     public lovexp2 lovexp2;
-    public GameObject findgirlminiicon,defenseNPC,towergreenFX,fakefindgirlhouse,mother;
+    public GameObject interestHouse,findgirlminiicon, defenseNPC,towergreenFX,fakefindgirlhouse,mother;
     public GameObject defensehouseminimapicon,Amissionminimapicon,well1,fire1,fire3,fire4,fire5,fire6,fire7,fire8,findgirlmission,sportcol1,sportcol2,fakeOhouse,fakePhouse,GetKeycanvas,dragonforsaveplayer,finalbossScene,realweaponhouse,fakeweaponhouse,shitcount, realpet3, realpet4,realpet2,fakepethouse,realpethouse,talkcanvaspet,petleavecanvas,NPCpet,fakepet,realpet,chan,Real_houes4,potionHouse2,House1,House2,House3,fakedefenseMissionhouse,swordinwaitsisterhand,swordinp2hand,sisterweaponNPC,talkgetweaponCanvas,housesmokeFX,townwall,townwall2,All_newgame2notes,new2gamecollider,newgame2startPanel,myhousefake,Amission1house,mainmission1house1,bmainmission1house1,Ostoneminiicon,Pstoneminiicon,secretpathminiicon,missionbook,All_BULL_Enemy,All_BULL_Enemy2,icon2,playerInfoPanel,Lanters,newmainmission1,sisterwaitforjoin,Bushes,VillageFence,VillageFence2, OtherProps,OtherProps2,tree,tree2,undergroundFinalboss,undergroundFinalboss2,real_Pstonehouse,real_Ostonehouse,StonePuzzleCanvas,LetterOSTONE,GetOStone,undergroud,bgm1Collider,bgm3Collider,All_guard,finishgameCanvas,Allshieldman,newbgm1,Allnotes,mmpointer,Pstonehousearrow,buttoncollider,electricUI,talkwithsistercollider,well2Stone,well3Stone,well4Stone,mission3house,mission3housefinished,Pstoneminimapicon,trap1,trap2,trap3,trap4,Btrap1,Btrap2,saw1,saw2,saw3,saw4,saw5,saw6,saw7,axe1,axe2,axe3,hammer1,hammer2,All_powerfulGuard,PstonePlace,Pstonefinish,Pstone,groupbarrel,Ostoneminimapicon,All_turtle,whereOstone,NotbombBarrel,OstonePlace,Ostonefinish,bg4,AlloldmanEnemy,Ostone,GoodBadCountBar,SDBDfile,minimapiconKey,mainmissiontext,oldplayer,player,startmission,howtoplay,Playername,healthbar,expbar,starttext,axeUI,potionCount,punchUI,firstangrylog,potion1,potion2,potion3,icon,sportFunction,MathFunction,saveNPC1,saveNPC2,moneybag,cage,notes8,angry2,angry3,angry5,humanenemy,oldmusic,brokenaxechecker1,humanenemy2,GateKey,gateL,gateR,gateCollider,boss1,unrealboss1,runningGame,saveNPCforkillboss1,brokenaxechecker2,minimapiconmchouse,minimapiconGate;
 public AudioSource main2music;public Texture2D cursorArrow;public Ischange changeornot;public save2 save;
     void Start(){
@@ -364,7 +364,8 @@ public AudioSource main2music;public Texture2D cursorArrow;public Ischange chang
             fakedefenseMissionhouse.GetComponent<SphereCollider>().enabled=true;
             fakepethouse.GetComponent<SphereCollider>().enabled=true;
             fakeweaponhouse.GetComponent<SphereCollider>().enabled=true;
-            fakefindgirlhouse.GetComponent<SphereCollider>().enabled = true;
+            fakefindgirlhouse.GetComponent<SphereCollider>().enabled=true;
+            interestHouse.GetComponent<SphereCollider>().enabled=true;
             new2gamecollider.SetActive(true);
             Destroy(finalbossScene);
             save.bull_kingisdead=PlayerPrefs.GetFloat("bull_kingisdead");

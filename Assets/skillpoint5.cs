@@ -6,10 +6,9 @@ using UnityEngine.UI;using UnityEngine;public class skillpoint5:MonoBehaviour{
         if(save2.totalSkillPoint>0&&save2.point5finish<1&&save2.point4finish>0){
             point5.GetComponent<Image>().raycastTarget=true;
         }
-        if (save2.point5finish > 0)
-        {
-            point5.GetComponent<Image>().raycastTarget = false;
-            point5.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        if(save2.point5finish>0){
+            point5.GetComponent<Image>().raycastTarget=false;
+            point5.GetComponent<Image>().color=new Color32(255,255,255,255);
         }
     }
     public void clickpoint5(){
