@@ -1,7 +1,7 @@
 using UnityEngine;public class minimapController:MonoBehaviour{
     public save2 save2;
     float distance8,distance6,distance5,distance4,distance3,distance,distance2,distance7;
-    public GameObject NPCinterest,NPCweapon,NPCpet,NPC4,NPC3,NPC2,mmpointer,healskillUI,Player,seller,minimapcamera,minimap,NPC1;
+    public GameObject enterTocontinue,finalbossHealthBar, finishgametalk, finalgirl, NPCinterest, NPCweapon,NPCpet,NPC4,NPC3,NPC2,mmpointer,healskillUI,Player,seller,minimapcamera,minimap,NPC1;
     void Update(){
         distance=Vector3.Distance(Player.transform.position,seller.transform.position);
         distance2=Vector3.Distance(Player.transform.position,NPC1.transform.position);
@@ -32,6 +32,16 @@ using UnityEngine;public class minimapController:MonoBehaviour{
             if(save2.isjoined==false){
                 healskillUI.SetActive(false);
             }
-        }
+            if(save2.bull_kingisdead>0&&save2.bull_kingisdead1>0&& save2.bull_kingisdead2 > 0 && save2.bull_kingisdead3 > 0)
+            {
+                finalgirl.SetActive(true);
+            }
+            if (save2.fatherhurt >= 3)
+            {
+                finishgametalk.SetActive(true);
+                enterTocontinue.SetActive(true);
+                Destroy(finalbossHealthBar);
+            }
+                }
     }
 }
